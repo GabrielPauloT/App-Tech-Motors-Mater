@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "432514328350",
+    "project_id": "techmotors-ba3db",
+    "storage_bucket": "techmotors-ba3db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432514328350:android:0869a42bd27fa4c5fc4b0f",
+        "android_client_info": {
+          "package_name": "com.example.crud_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432514328350-f95dkihuv1d3ito7rd49uq46g0t9iktj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa4SXG8anyDssg-7W6XhmvlA_6Hjk0rbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432514328350-f95dkihuv1d3ito7rd49uq46g0t9iktj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
