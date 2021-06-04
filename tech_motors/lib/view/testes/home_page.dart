@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart'
     show FirebaseFirestore, QuerySnapshot;
-import 'package:crud_firebase/view/todo_page.dart';
+import 'package:crud_firebase/view/testes/todo_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
