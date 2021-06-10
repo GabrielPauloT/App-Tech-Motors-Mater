@@ -31,7 +31,7 @@ class _CadastroClienteState extends State<CadastroCliente> {
       backgroundColor: Color(0xFFE5E5E5),
       appBar: AppBar(
         backgroundColor: Color(0xF513B5EB),
-        title: Text("Cadastro de Ordem de Serviço"),
+        title: Text("Cadastro de Cliente"),
       ),
       body: ListView(
         padding: EdgeInsets.only(right: 15, left: 15),
@@ -88,10 +88,8 @@ class _CadastroClienteState extends State<CadastroCliente> {
                   });
 
                   {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ClientePage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ClientePage()));
                   }
                 },
                 child: Icon(FontAwesome.ok),

@@ -1,5 +1,5 @@
 /* import 'package:crud_firebase/src/app/user_page/login_page.dart'; */
-import 'package:crud_firebase/src/app/dashboard_page.dart';
+import 'package:crud_firebase/src/app/user_page/login_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,7 @@ class Wellcome extends StatefulWidget {
   @override
   _WellcomeState createState() => _WellcomeState();
 }
-
+ 
 class _WellcomeState extends State<Wellcome> {
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class _WellcomeState extends State<Wellcome> {
                 color: Color(0xF513B5EB),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Dashboard()));
+                      MaterialPageRoute(builder: (context) => LoginPage()));
                 },
                 child: Text(
                   "Entrar",

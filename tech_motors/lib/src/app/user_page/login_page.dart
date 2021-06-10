@@ -1,4 +1,4 @@
-/* import 'package:crud_firebase/src/app/dashboard_page.dart';
+import 'package:crud_firebase/src/app/dashboard_page.dart';
 import 'package:crud_firebase/src/app/repository/app_repository_impl.dart';
 import 'package:flutter/material.dart';
 
@@ -127,4 +127,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
- */

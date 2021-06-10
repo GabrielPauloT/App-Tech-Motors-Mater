@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
             );
           default:
             Widget example1 = SplashScreenView(
-              home: Wellcome(),
               duration: 3000,
               imageSize: 200,
               text: "Tech Motors",
@@ -44,7 +43,9 @@ class MyApp extends StatelessWidget {
                   color: Color(0xF513B5EB),
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
+              navigateRoute: Wellcome(),
             );
+
             return MaterialApp(
               title: 'Tech Motors',
               debugShowCheckedModeBanner: false,

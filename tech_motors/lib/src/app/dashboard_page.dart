@@ -1,18 +1,53 @@
-import 'package:crud_firebase/src/app/cliente_page/cliente_page.dart';
-import 'package:crud_firebase/src/app/ordemServico_page/os_page.dart';
+import 'package:crud_firebase/src/app/produto_page/produto_page.dart';
+import 'package:crud_firebase/src/app/user_page/profile_page.dart';
 import 'package:flutter/material.dart';
 
+import 'cliente_page/cliente_page.dart';
 import 'funcionario_page/funcionario_page.dart';
+import 'ordemServico_page/os_page.dart';
 
 class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.menu),
+          leading: Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              );
+            },
+          ),
           title: Text("Tech Motors",
               style: TextStyle(fontWeight: FontWeight.bold)),
           backgroundColor: Color(0xF513B5EB),
+        ),
+        drawer: new Drawer(
+          child: ListView(children: <Widget>[
+            UserAccountsDrawerHeader(
+                accountName: new Text(
+                  "Tech Motors",
+                  style: new TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17.0,
+                  ),
+                ),
+                accountEmail: new Text("TechMotors@tech.com.br"),
+                currentAccountPicture: Image.asset('assets/logo1.png'),
+                decoration: new BoxDecoration(color: Color(0xF513B5EB))),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Perfil"),
+              onTap: () async {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Profile()));
+              },
+            )
+          ]),
         ),
         body: Column(
           children: <Widget>[
@@ -44,7 +79,7 @@ class Dashboard extends StatelessWidget {
                           height: 150,
                         ),
                         onTap: () async {
-                          Navigator.pop(
+                          Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => FuncionarioPage()));
@@ -98,7 +133,7 @@ class Dashboard extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => OsPage()));
+                                  builder: (context) => ProdutoPage()));
                         },
                       ),
                       color: Colors.white,

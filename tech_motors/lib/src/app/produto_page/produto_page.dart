@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'cadastro_produto.dart';
 
-
 class ProdutoPage extends StatelessWidget {
   static String tag = '/home';
 
@@ -19,7 +18,7 @@ class ProdutoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xF513B5EB),
-        title: Text('Ordem de Serviço'),
+        title: Text('Produtos'),
       ),
       backgroundColor: Color(0xFFE5E5E5),
       body: StreamBuilder(
@@ -73,8 +72,8 @@ class ProdutoPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => CadastroProduto()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CadastroProduto()));
         },
         tooltip: 'Adicionar novo',
         child: Icon(Icons.add),
