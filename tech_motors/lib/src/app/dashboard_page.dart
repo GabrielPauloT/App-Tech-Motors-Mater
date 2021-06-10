@@ -70,7 +70,7 @@ class Dashboard extends StatelessWidget {
                   mainAxisSpacing: 10,
                   crossAxisCount: 2,
                   children: <Widget>[
-                    Container(
+                    /* Container(
                       padding: const EdgeInsets.all(8),
                       child: GestureDetector(
                         child: Image.asset(
@@ -86,7 +86,7 @@ class Dashboard extends StatelessWidget {
                         },
                       ),
                       color: Colors.white,
-                    ),
+                    ), */
                     Container(
                       padding: const EdgeInsets.all(8),
                       child: GestureDetector(

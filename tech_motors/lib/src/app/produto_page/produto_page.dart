@@ -52,6 +52,11 @@ class ProdutoPage extends StatelessWidget {
                 margin: const EdgeInsets.all(5),
                 child: ListTile(
                   isThreeLine: true,
+                  leading: CircleAvatar(
+                    backgroundColor: Color(0xF513B5EB),
+                    child: Text(doc['quantidade']),
+                  )
+                  /* Text(doc['quantidade']) */,
                   title: Text(doc['nome']),
                   subtitle: Text(doc['valor']),
                   trailing: CircleAvatar(

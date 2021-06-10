@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart'
     show FirebaseFirestore, QuerySnapshot;
 import 'package:crud_firebase/src/app/funcionario_page/cadastro_funcionario.dart';
 import 'package:flutter/material.dart';
-
+import 'package:fluttericon/font_awesome_icons.dart';
 
 class FuncionarioPage extends StatelessWidget {
   static String tag = '/home';
@@ -52,6 +52,10 @@ class FuncionarioPage extends StatelessWidget {
                 margin: const EdgeInsets.all(5),
                 child: ListTile(
                   isThreeLine: true,
+                  leading: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: Icon(FontAwesome.black_tie),
+                  ),
                   title: Text(doc['nome']),
                   subtitle: Text(doc['celular']),
                   trailing: CircleAvatar(
@@ -72,8 +76,8 @@ class FuncionarioPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => CadastroFuncionario()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CadastroFuncionario()));
         },
         tooltip: 'Adicionar novo',
         child: Icon(Icons.add),

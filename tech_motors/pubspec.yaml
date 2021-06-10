@@ -39,6 +39,7 @@ dependencies:
   alert_dialog: ^1.0.0
   fluttericon: ^2.0.0
   url_launcher: ^6.0.6
+  flutter_masked_text: ^0.8.0
 
 dev_dependencies:
   flutter_test:
