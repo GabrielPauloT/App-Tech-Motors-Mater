@@ -2,7 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart'
     show FirebaseFirestore, Timestamp;
 import 'package:crud_firebase/src/app/ordemServico_page/os_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:flutter_masked_text/flutter_masked_text.dart'
+    show MoneyMaskedTextController;
 
 // ignore: must_be_immutable
 class CadastroOs extends StatefulWidget {
@@ -15,7 +19,7 @@ class _CadastroOsState extends State<CadastroOs> {
   Widget build(BuildContext context) {
     var cliente = TextEditingController();
     var servico = TextEditingController();
-    var valor = TextEditingController();
+    var valor = new MoneyMaskedTextController(leftSymbol: 'R\$ ');
     var funcionario = TextEditingController();
 
     return Scaffold(
@@ -77,10 +81,13 @@ class _CadastroOsState extends State<CadastroOs> {
   }
 
   Widget _customTextField(
-      String title, String trailing, TextEditingController controller) {
+      String title, String trailing, TextEditingController controller,
+      {List<TextInputFormatter>? inputFormatters}) {
     return Card(
         child: TextField(
-            keyboardType: TextInputType.text,
+            inputFormatters: inputFormatters,
+            keyboardType:
+                title == "Valor" ? TextInputType.number : TextInputType.text,
             controller: controller,
             decoration: InputDecoration(
               fillColor: Color(0xFFE5E5E5),

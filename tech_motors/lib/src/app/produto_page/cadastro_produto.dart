@@ -60,7 +60,7 @@ class _CadastroProdutoState extends State<CadastroProduto> {
                     'quantidade': int.parse(quantidade.text),
                     'valor': valor.text,
                     'data': Timestamp.now(),
-                    /* 'excluido': false, */
+                    'excluido': false,
                   });
 
                   {
