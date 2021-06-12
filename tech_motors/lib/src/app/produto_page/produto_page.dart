@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart'
     show FirebaseFirestore, QuerySnapshot;
 import 'package:flutter/material.dart';
+import 'package:fluttericon/font_awesome_icons.dart';
 
 import 'cadastro_produto.dart';
 
@@ -44,6 +45,8 @@ class ProdutoPage extends StatelessWidget {
             itemBuilder: (BuildContext context, int i) {
               var doc = snapshot.data!.docs[i];
 
+              int quantidadesoma = doc['quantidade'];
+              String result = quantidadesoma.toString();
               return Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -55,20 +58,35 @@ class ProdutoPage extends StatelessWidget {
                   leading: CircleAvatar(
                     foregroundColor: Colors.white,
                     backgroundColor: Color(0xF513B5EB),
-                    child: Text(doc['quantidade']),
+                    child: Text(result),
                   )
                   /* Text(doc['quantidade']) */,
                   title: Text(doc['nome']),
                   subtitle: Text(doc['valor']),
-                  trailing: CircleAvatar(
-                    backgroundColor: Colors.red[300],
-                    foregroundColor: Colors.white,
-                    child: IconButton(
-                      icon: Icon(Icons.delete),
-                      onPressed: () => doc.reference.update({
-                        'excluido': true,
-                      }),
-                    ),
+                  trailing: Wrap(
+                    spacing: 12,
+                    children: <Widget>[
+                      CircleAvatar(
+                        child: FloatingActionButton(
+                          backgroundColor: Colors.red[300],
+                          foregroundColor: Colors.white,
+                          child: Icon(FontAwesome.minus),
+                          onPressed: () => doc.reference.update({
+                            'quantidade': quantidadesoma - 1,
+                          }),
+                        ),
+                      ),
+                      CircleAvatar(
+                        child: FloatingActionButton(
+                          backgroundColor: Colors.green[300],
+                          foregroundColor: Colors.white,
+                          child: Icon(FontAwesome.plus),
+                          onPressed: () => doc.reference.update({
+                            'quantidade': quantidadesoma + 1,
+                          }),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               );

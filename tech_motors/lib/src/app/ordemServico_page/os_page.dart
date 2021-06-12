@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart'
     show FirebaseFirestore, QuerySnapshot;
 import 'package:flutter/material.dart';
+import 'package:fluttericon/font_awesome_icons.dart';
 
 import 'cadastro_os.dart';
 
@@ -55,8 +56,8 @@ class OsPage extends StatelessWidget {
                   leading: IconButton(
                     icon: Icon(
                       doc['feito']
-                          ? Icons.check_circle
-                          : Icons.check_circle_outline,
+                          ? FontAwesome.ok_circled
+                          : FontAwesome.circle_thin,
                       size: 32,
                     ),
                     onPressed: () => doc.reference.update /* updateData */ ({

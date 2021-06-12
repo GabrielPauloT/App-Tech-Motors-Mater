@@ -57,10 +57,10 @@ class _CadastroProdutoState extends State<CadastroProduto> {
                 onPressed: () async {
                   await FirebaseFirestore.instance.collection('produto').add({
                     'nome': nome.text,
-                    'quantidade': quantidade.text,
+                    'quantidade': int.parse(quantidade.text),
                     'valor': valor.text,
                     'data': Timestamp.now(),
-                    'excluido': false,
+                    /* 'excluido': false, */
                   });
 
                   {
