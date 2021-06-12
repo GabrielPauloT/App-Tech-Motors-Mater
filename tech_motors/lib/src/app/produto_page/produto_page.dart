@@ -53,6 +53,7 @@ class ProdutoPage extends StatelessWidget {
                 child: ListTile(
                   isThreeLine: true,
                   leading: CircleAvatar(
+                    foregroundColor: Colors.white,
                     backgroundColor: Color(0xF513B5EB),
                     child: Text(doc['quantidade']),
                   )
