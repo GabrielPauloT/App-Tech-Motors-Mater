@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart' show MdiIcons;
 
 // ignore: must_be_immutable
 class FuncionarioList extends StatefulWidget {
@@ -30,37 +32,137 @@ class _FuncionarioListState extends State<FuncionarioList> {
       body: ListView(
         children: [
           Padding(padding: EdgeInsets.all(20)),
-          ListTile(
-            leading: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Icon(FontAwesome.user),
+          Container(
+            width: 80,
+            height: 80,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    MdiIcons.contactsOutline,
+                    size: 40,
+                  ),
+                ),
+                title: Text(
+                  widget.nome,
+                  style: const TextStyle(fontSize: 25),
+                ),
+              ),
             ),
-            title: Text(widget.nome),
           ),
-          ListTile(
-            leading: Icon(Icons.phone),
-            title: Text(widget.celular),
+          Container(
+            width: 65,
+            height: 65,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    Icons.phone,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.celular,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ),
-          ListTile(
-            leading: Icon(FontAwesome.location),
-            title: Text(widget.endereco),
+          Container(
+            width: 65,
+            height: 65,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    MdiIcons.store,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.endereco,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ),
-          ListTile(
-            leading: Icon(FontAwesome.location),
-            title: Text(widget.bairro),
+          Container(
+            width: 65,
+            height: 65,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    FontAwesome.location,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.bairro,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ),
-          ListTile(
-            leading: Icon(FontAwesome.calendar),
-            title: Text(widget.nascimento),
+          Container(
+            width: 65,
+            height: 65,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    FontAwesome.calendar,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.nascimento,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ),
-          ListTile(
-            leading: Icon(FontAwesome.male),
-            title: Text(widget.cpf),
+          Container(
+            width: 65,
+            height: 65,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    MdiIcons.badgeAccountOutline,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.cpf,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ),
-          ListTile(
-            leading: Icon(FontAwesome.doc),
-            title: Text(
-              widget.rg,
+          Container(
+            width: 65,
+            height: 65,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    MdiIcons.badgeAccountHorizontalOutline,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.rg,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
             ),
           )
         ],

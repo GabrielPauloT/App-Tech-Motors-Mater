@@ -7,7 +7,6 @@ import 'package:crud_firebase/src/app/ordemServico_page/os_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
-
 import 'cliente_page.dart';
 
 // ignore: must_be_immutable

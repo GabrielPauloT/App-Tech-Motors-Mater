@@ -48,42 +48,49 @@ class ClientePage extends StatelessWidget {
             itemBuilder: (BuildContext context, int i) {
               var doc = snapshot.data!.docs[i];
 
-              return OpenContainer(
-                  transitionDuration: Duration(milliseconds: 600),
-                  transitionType: ContainerTransitionType.fadeThrough,
-                  closedElevation: 2,
-                  closedBuilder: (context, action) {
-                    return ListTile(
-                      isThreeLine: true,
-                      leading: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Icon(FontAwesome.user),
-                      ),
-                      title: Text(doc['nome']),
-                      subtitle: Text(doc['celular']),
-                      trailing: CircleAvatar(
-                        backgroundColor: Colors.red[300],
-                        foregroundColor: Colors.white,
-                        child: IconButton(
-                          icon: Icon(Icons.delete),
-                          onPressed: () => doc.reference.update({
-                            'excluido': true,
-                          }),
+              return Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                margin: const EdgeInsets.all(5),
+                child: OpenContainer(
+                    transitionDuration: Duration(milliseconds: 600),
+                    transitionType: ContainerTransitionType.fadeThrough,
+                    closedElevation: 2,
+                    closedBuilder: (context, action) {
+                      return ListTile(
+                        isThreeLine: true,
+                        leading: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Icon(FontAwesome.user),
                         ),
-                      ),
-                    );
-                  },
-                  openBuilder: (context, action) {
-                    return ClienteList(
-                      doc['nome'],
-                      doc['celular'],
-                      doc['endereco'],
-                      doc['bairro'],
-                      doc['nascimento'],
-                      doc['cpf'],
-                      doc['rg'],
-                    );
-                  });
+                        title: Text(doc['nome']),
+                        subtitle: Text(doc['celular']),
+                        trailing: CircleAvatar(
+                          backgroundColor: Colors.red[300],
+                          foregroundColor: Colors.white,
+                          child: IconButton(
+                            icon: Icon(Icons.delete),
+                            onPressed: () => doc.reference.update({
+                              'excluido': true,
+                            }),
+                          ),
+                        ),
+                      );
+                    },
+                    openBuilder: (context, action) {
+                      return ClienteList(
+                        doc['nome'],
+                        doc['celular'],
+                        doc['endereco'],
+                        doc['bairro'],
+                        doc['nascimento'],
+                        doc['cpf'],
+                        doc['rg'],
+                      );
+                    }),
+              );
             },
           );
         },

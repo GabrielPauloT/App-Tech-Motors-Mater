@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttericon/entypo_icons.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart' show MdiIcons;
 
 // ignore: must_be_immutable
 class OsList extends StatefulWidget {
@@ -21,30 +23,89 @@ class _OsListState extends State<OsList> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xF513B5EB),
-        title: Text('Cliente'),
+        title: Text('Ordem de Serviço'),
       ),
       backgroundColor: Color(0xFFE5E5E5),
       body: ListView(
         children: [
           Padding(padding: EdgeInsets.all(20)),
-          ListTile(
-            leading: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Icon(FontAwesome.user),
+          Container(
+            width: 80,
+            height: 80,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    MdiIcons.contactsOutline,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.cliente,
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
+              ),
             ),
-            title: Text(widget.cliente),
           ),
-          ListTile(
-            leading: Icon(FontAwesome.black_tie),
-            title: Text(widget.funcionario),
+          Container(
+            width: 80,
+            height: 80,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    FontAwesome.black_tie,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.funcionario,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ),
-          ListTile(
-            leading: Icon(Entypo.tools),
-            title: Text(widget.servico),
+          Container(
+            width: 80,
+            height: 80,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    Entypo.tools,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.servico,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ),
-          ListTile(
-            leading: Icon(FontAwesome.money),
-            title: Text(widget.valor),
+          Container(
+            width: 80,
+            height: 80,
+            child: Card(
+              child: ListTile(
+                leading: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Icon(
+                    FontAwesome.money,
+                    size: 35,
+                  ),
+                ),
+                title: Text(
+                  widget.valor,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ),
         ],
       ),

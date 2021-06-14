@@ -37,7 +37,12 @@ class Profile extends StatelessWidget {
                 padding: EdgeInsets.only(right: 20, left: 20, bottom: 20.0),
                 child: TextFormField(
                   keyboardType: TextInputType.text,
+                  initialValue: "Tech Motors",
                   decoration: InputDecoration(
+                      fillColor: Color(0xFFE5E5E5),
+                      filled: true,
+                      contentPadding: EdgeInsets.only(left: 20),
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
                       border: OutlineInputBorder(),
                       labelText: "Nome",
                       hintText: "Nome"),
@@ -58,7 +63,12 @@ class Profile extends StatelessWidget {
                 padding: EdgeInsets.only(right: 20, left: 20, bottom: 20.0),
                 child: TextFormField(
                   keyboardType: TextInputType.text,
+                  initialValue: "TechMotors@tech.com.br",
                   decoration: InputDecoration(
+                      fillColor: Color(0xFFE5E5E5),
+                      filled: true,
+                      contentPadding: EdgeInsets.only(left: 20),
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
                       border: OutlineInputBorder(),
                       labelText: "E-mail",
                       hintText: "E-mail"),
@@ -71,7 +81,7 @@ class Profile extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            /* SizedBox(
               height: 70.0,
               child: Container(
                 padding: EdgeInsets.only(right: 20.0, left: 20.0),
@@ -92,7 +102,7 @@ class Profile extends StatelessWidget {
                   },
                 ),
               ),
-            ),
+            ), */
             SizedBox(
               child: Container(
                 padding: EdgeInsets.all(80),
