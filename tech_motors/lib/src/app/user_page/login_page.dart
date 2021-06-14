@@ -67,11 +67,11 @@ class _LoginPageState extends State<LoginPage> {
               var senha = novoLogin[contador];
               contador += 2;
               var email = novoLogin[contador];
-              if (email == senhaController.text) {
-                if (senha == emailController.text) {
+              if (email == emailController.text) {
+                if (senha == senhaController.text) {
                   existe = true;
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Dashboard()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Dashboard()));
                 }
               }
               contador += 5;
