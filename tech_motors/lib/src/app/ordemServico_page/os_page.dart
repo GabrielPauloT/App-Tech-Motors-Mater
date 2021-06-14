@@ -1,9 +1,12 @@
+// ignore: import_of_legacy_library_into_null_safe
+import 'package:animations/animations.dart' show ContainerTransitionType, OpenContainer;
 import 'package:cloud_firestore/cloud_firestore.dart'
     show FirebaseFirestore, QuerySnapshot;
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 
 import 'cadastro_os.dart';
+import 'oslist_page.dart';
 
 class OsPage extends StatelessWidget {
   static String tag = '/home';
@@ -45,38 +48,46 @@ class OsPage extends StatelessWidget {
             itemBuilder: (BuildContext context, int i) {
               var doc = snapshot.data!.docs[i];
 
-              return Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                margin: const EdgeInsets.all(5),
-                child: ListTile(
-                  isThreeLine: true,
-                  leading: IconButton(
-                    icon: Icon(
-                      doc['feito']
-                          ? FontAwesome.ok_circled
-                          : FontAwesome.circle_thin,
-                      size: 32,
-                    ),
-                    onPressed: () => doc.reference.update /* updateData */ ({
-                      'feito': !doc['feito'],
-                    }),
-                  ),
-                  title: Text(doc['cliente']),
-                  subtitle: Text(doc['servico']),
-                  trailing: CircleAvatar(
-                    backgroundColor: Colors.red[300],
-                    foregroundColor: Colors.white,
-                    child: IconButton(
-                      icon: Icon(Icons.delete),
-                      onPressed: () => doc.reference.update({
-                        'excluido': true,
+              return OpenContainer(
+                transitionDuration: Duration(milliseconds: 600),
+                transitionType: ContainerTransitionType.fadeThrough,
+                closedElevation: 2,
+                closedBuilder: (context, action) {
+                  return ListTile(
+                    isThreeLine: true,
+                    leading: IconButton(
+                      icon: Icon(
+                        doc['feito']
+                            ? FontAwesome.ok_circled
+                            : FontAwesome.circle_thin,
+                        size: 32,
+                      ),
+                      onPressed: () => doc.reference.update /* updateData */ ({
+                        'feito': !doc['feito'],
                       }),
                     ),
-                  ),
-                ),
+                    title: Text(doc['cliente']),
+                    subtitle: Text(doc['servico']),
+                    trailing: CircleAvatar(
+                      backgroundColor: Colors.red[300],
+                      foregroundColor: Colors.white,
+                      child: IconButton(
+                        icon: Icon(Icons.delete),
+                        onPressed: () => doc.reference.update({
+                          'excluido': true,
+                        }),
+                      ),
+                    ),
+                  );
+                },
+                openBuilder: (context, action) {
+                  return OsList(
+                    doc['cliente'],
+                    doc['servico'],
+                    doc['funcionario'],
+                    doc['valor'],
+                  );
+                },
               );
             },
           );
